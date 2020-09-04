@@ -13,6 +13,7 @@ class MemberRepositoryTest {
     MemberRepository memberRepository;
 
     @Test
+    @Transactional
     public void testMember() {
         Member member = new Member();
         member.setUsername("memberA");
