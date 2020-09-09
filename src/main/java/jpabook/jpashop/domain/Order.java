@@ -31,6 +31,7 @@ public class Order {
     @JoinColumn(name = "delivery_id")
     private Delivery delivery; //배송정보
 
+
     private LocalDateTime orderDate; //주문시간
     @Enumerated(EnumType.STRING)
 
@@ -43,6 +44,8 @@ public class Order {
     }
 
     public void addOrderItem(OrderItem orderItem) {
+        //여기서 orderItems는 물건들의 구매정보(수량,이름,가격)이 담겨져있는 List임.
+        //이 List에 orderItem을 하나하나 추가해주는 메서드임.
         orderItems.add(orderItem);
         orderItem.setOrder(this);
     }
