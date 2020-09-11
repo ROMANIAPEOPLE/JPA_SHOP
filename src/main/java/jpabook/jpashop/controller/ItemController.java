@@ -1,5 +1,6 @@
 package jpabook.jpashop.controller;
 
+import jpabook.jpashop.domain.dto.ItemUpdateDto;
 import jpabook.jpashop.domain.item.Book;
 import jpabook.jpashop.domain.item.Item;
 import jpabook.jpashop.service.ItemService;
@@ -71,8 +72,12 @@ public class ItemController {
 //        book.setAuthor(form.getAuthor());
 //        book.setIsbn(form.getIsbn());
 //        itemService.saveItem(book);
+        ItemUpdateDto dto = new ItemUpdateDto();
+        dto.setName(form.getName());
+        dto.setPrice(form.getPrice());
+        dto.setStockQuantity(form.getStockQuantity());
 
-        itemService.updateItem(itemId, form.getPrice(),form.getName(),form.getStockQuantity());
+        itemService.updateItem2(itemId,dto);
 
 
         return "redirect:/items";
