@@ -1,10 +1,10 @@
 package jpabook.jpashop.domain.dto;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Setter
-@Getter
+@Data
 public class ItemUpdateDto {
     private String name;
     private int price;
