@@ -13,7 +13,7 @@ public class Category {
     @Column(name = "category_id")
     private Long id;
     private String name;
-    @ManyToMany
+    @ManyToMany //실무에서는 사용X
     @JoinTable(name = "category_item",
             joinColumns = @JoinColumn(name = "category_id"),
             inverseJoinColumns = @JoinColumn(name = "item_id"))
